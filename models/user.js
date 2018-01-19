@@ -1,37 +1,51 @@
-var Sequelize = require("sequelize");
-// sequelize (lowercase) references our connection to the DB.
-var sequelize = require("../config/connection.js");
+module.exports = function(sequelize, DataTypes) {
+  var User = sequelize.define("User", {
+    // Giving the User model a name of type STRING
+    firstName: {
+      type: DataTypes.STRING,
+      // allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      // allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    userId: {
+      type: DataTypes.STRING,
+      // allowNull: false,
+      validate: {
+        len: [5]
+      }
+    },
+    email: {
+      type: DataTypes.STRING,
+      // allowNull: false,
+      validate: {
+        len: [8]
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      // allowNull: false,
+      validate: {
+        len: [8]
+      }
+    }
+  });
 
-// Creates a "User" model that matches up with DB
-var User = sequelize.define("user", {
-  
-  routeName: Sequelize.STRING,
-  
-  user_id: Sequelize.INTEGER,
-  
-  first_name: Sequelize.STRING,
 
-  last_name: Sequelize.STRING,
-  
-  email: Sequelize.STRING,
-  
-  phone: Sequelize.INTEGER,
+  User.associate = function(models) {
+    // Associating User with Gear
+    // When an User is deleted, also delete any associated Gear
+    User.hasMany(models.Gear, {
+      onDelete: "cascade"
+    });
+  };
 
-  location: Sequelize.STRING,
-  // userRating allows users the opportunity to rate working with each other.
-  userRating: Sequelize.INGTEGER,
-
-  createdAt: Sequelize.DATE,
-  
-  updatedAt: Sequelize.DATE
-
-
-}, {
-  timestamps: true;
-});
-
-// Syncs with DB
-User.sync();
-
-// Makes the Character Model available for other files (will also create a table)
-module.exports = User;
+  return User;
+};
