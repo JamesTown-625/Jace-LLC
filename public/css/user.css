@@ -211,7 +211,7 @@ span.psw {
 	height: 75px;
 }
 
-.panel-body .logoTop{
+.panel-body{
 	
 	text-align: center;
     margin-left: auto;
@@ -240,17 +240,4 @@ span.psw {
 .container{
 	margin: auto;
 	padding: 0px;
-}
-
-.panel-body{
-	float:right;
-}
-.social-box{
-	height: 40px;
-	width: 40px;
-	display: inline;
-    margin-left: auto;
-    /*margin-right: auto;*/
-    align-content: center;
-	
 }
