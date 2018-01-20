@@ -18,18 +18,19 @@ body {
 }
 
 .footer {
-    position: fixed;
+    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-image: url("../../assets/woodPlanks2.png");
-    color: white;
+    /*background-image: url("../../assets/woodPlanks2.png");*/
+    color: red;
     text-align: center;
+
 }
 .panel-body-left{
 	float: left;
 	width: 150px;
-	height: auto;
+	height: 100%;
 	margin-left:20px;
 	background: green;
 
@@ -38,7 +39,7 @@ body {
 .panel-body-center{
 	
 	width: auto;
-	height: 1px;
+	height: 150px;
 	margin-left:20px;
 	background: green;
 	
@@ -234,7 +235,7 @@ span.psw {
     text-shadow: 1px 1px black;
 }
 #myCarousel{
-	border: 5px solid white;
+	border: 20px green;
 }
 
 .container{

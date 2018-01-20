@@ -26,7 +26,7 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <img id= "logoTopBar" src = "../../assets/images/peertogear3.png"></a>
+	      <a><img id= "logoTopBar" src = "../../assets/images/peertogear3.png" href="home.html"></a>
 
 	    </div>
 
@@ -36,7 +36,7 @@
 	      <ul class="nav navbar-nav navbar-right">
 	        <li><a href="#"></a></li>
 	        <li><a id= "topBarLink" href="user.html">Sign Up!</a></li>
-	        <li><a id= "topBarLink" href="#">About Us</a></li>
+	        <li><a id= "topBarLink" href="gear.html">What we do</a></li>
 	        
 	          <!-- Login Button -->
 	          <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" id="memberLoginButton">Member Login</button>
@@ -92,23 +92,23 @@
 			<!-- </div> -->
 		
 
-			<div class="panel-body-left">
+			<!-- <div class="panel-body-left">
 			  	<div class = "row">
 				  	<div class="col-md-4">
 				    Basic panel example
-				    <!-- <img src = "../assets/images/petzl1.jpg"> -->
+				    <img src = "../assets/images/petzl1.jpg">
 					</div>
 				</div>
-	  		</div>
+	  		</div> -->
 
-			  <div class="panel-body-right">
+			  <!-- <div class="panel-body-right">
 			  	<div class = "row">
 			  	<div class="col-md-4">
 			    Basic panel example
-			    <!-- <img src = "../assets/images/pressEvent.jpg"> -->
+			    <img src = "../assets/images/pressEvent.jpg">
 				</div>
 				</div>
-			  </div>
+			  </div> -->
 
 		<div class = "container">
 		  <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -145,15 +145,42 @@
 				</div>
 		</div>
 	</div>
-
 	<div class = "container">
-		<div class="panel panel-default">
-		  <div class="panel-body">
-		    <h3><strong>Check out some of our offerings</strong></h3>
-		  </div>
+		<h3 style="text-align: center" ><strong>Check out What we have to Offer!</strong></h3>
+		<div class="row">
+		<div class="col-md-6" id="add">
+            <!-- <h3 style="text-align: center" ><strong>Check out What we have to Offer!</strong></h3> -->
+            <!-- <h3 style="text-align: center">Want to Narrow it down? Select a Category!</h3> -->
+            <div class="form-group">
+              <label for="sel1">Want to Narrow it down? Select a Category!</label>
+              <select class="form-control" id="sel1">
+                 <option>All Categories</option>  
+                 <option>Winter</option>
+                 <option>Water</option>
+                 <option>Camping</option>
+                 <option>Tour Guide</option>
+				</select>
+			</div>	
 		</div>
-	</div>
+				
+			
+			<div class="col-md-6" id="add">
+				
+				<label for="sel1" style="margin: 0px">Want to Narrow it down? Enter a location!</label>
+	   				 <div class="input-group">
 
+	      				<input type="text" class="form-control" style="margin: 4px" placeholder="Seattle, WA">
+	      				<span class="input-group-btn">
+	       				 <button class="btn btn-default" type="button" style="margin: 4px">Go!</button>
+	      				</span>
+    				</div><!-- /input-group -->
+  				</div><!-- /.col-lg-6 -->
+				</div>
+			</div>
+
+
+	
+		<!-- thumbnails with examples of gear to rent -->
 	<div class = "container">
 		<div class="row">
 		  <div class="col-md-4">
@@ -162,7 +189,7 @@
 		      <div class="caption">
 		        <h3>1 Day Guide-Biking in Fruita</h3>
 		        <p>$50 per person</p>
-		        <p><a href="#" class="btn btn-primary" role="button">More Info</a></p>
+		        <p><a href="user.html" class="btn btn-primary" role="button">More Info</a><a href="#" class="btn btn-primary disabled" role="button">Add to Cart</a></p>
 		      </div>
 		    </div>
 		  </div>
@@ -172,7 +199,7 @@
 		      <div class="caption">
 		        <h3>4 Day river trip</h3>
 		        <p>$800 per person</p>
-		        <p><a href="#" class="btn btn-primary" role="button">More Info</a> </p>
+		        <p><a href="user.html" class="btn btn-primary" role="button">More Info</a><a href="#" class="btn btn-primary disabled" role="button">Add to Cart</a></p>
 		      </div>
 		    </div>
 		  </div>
@@ -182,7 +209,7 @@
 		      <div class="caption">
 		        <h3>1 Day Climbing Guide</h3>
 		        <p>$50 per day</p>
-		        <p><a href="#" class="btn btn-primary" role="button">More Info</a></p>
+		        <p><a href="user.html" class="btn btn-primary" role="button">More Info</a><a href="#" class="btn btn-primary disabled" role="button">Add to Cart</a></p>
 		      </div>
 		    </div>
 		  </div>
@@ -197,7 +224,7 @@
 		      <div class="caption">
 		        <h3>Full backpacking gear</h3>
 		        <p>$35 per day</p>
-		        <p><a href="#" class="btn btn-primary" role="button">More Info</a></p>
+		        <p><a href="user.html" class="btn btn-primary" role="button">More Info</a><a href="#" class="btn btn-primary disabled" role="button">Add to Cart</a></p>
 		      </div>
 		    </div>
 		  </div>
@@ -207,7 +234,7 @@
 		      <div class="caption">
 		        <h3>Canoe Rental</h3>
 		        <p>$20 per day</p>
-		        <p><a href="#" class="btn btn-primary" role="button">More Info</a> </p>
+		        <p><a href="user.html" class="btn btn-primary" role="button">More Info</a><a href="#" class="btn btn-primary disabled" role="button">Add to Cart</a></p>
 		      </div>
 		    </div>
 		  </div>
@@ -217,19 +244,24 @@
 		      <div class="caption">
 		        <h3>1 Day Surfboard Rental</h3>
 		        <p>$25 per day</p>
-		        <p><a href="#" class="btn btn-primary" role="button">More Info</a></p>
+		        <p><a href="user.html" class="btn btn-primary" role="button">More Info</a><a href="#" class="btn btn-primary disabled" role="button">Add to Cart</a></p>
 		      </div>
 		    </div>
 		  </div>
 		</div>
 	</div>
-
+	<div class="container">
+		<div class = "addGear">
+		<h4 style="text-align: center" ><strong>Have some gear you're not using? Click below to make it available</strong></h4>
+				<p><a class="btn btn-primary disabled btn-lg" href="#" role="button" id="addGearButton">ADD GEAR</a></p>
+			</div>
+			</div>
+			<br>
+			<br>
 	<!-- Footer -->
 	<div class="footer">
 	  <p>@PeerToGear</p>
-	  <!-- <li><a href="#">What we do</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Sign Up!</a></li> -->
+	  
 	</div>
 
 	<!-- Script for Login Modal- -->
