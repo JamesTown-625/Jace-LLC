@@ -1,0 +1,80 @@
+<html lang="en"><head>
+	<meta charset="UTF-8">
+	<title>Reservation Page</title>
+
+	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+	<div class="container">
+
+		<div class="jumbotron">
+			<h1 class="text-center"><span class="glyphicon"></span>Create a new account</h1>
+			<hr>
+			<h2 class="text-center">Get started with renting your gear or others out</h2>
+			<br>
+
+			<div class="text-center">
+				<a href="/tables"><button type="button" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list-alt"></span> Login</button></a>
+				<a href="/"><button type="button" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-home"></span></button></a>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12">
+
+				<!-- Reservation Page -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">...</h4>
+					</div>
+					<div class="panel-body">
+
+						<form role="form">
+
+							<div class="form-group">
+								<label for="">Gear</label>
+								<input type="text" class="form-control" id="user_first_name" placeholder="John">
+							</div>
+
+							<div class="form-group">
+								<label for="">Last Name</label>
+								<input type="text" class="form-control" id="user_last_name" placeholder="Johnson">
+							</div>
+
+							<div class="form-group">
+								<label for="">Email</label>
+								<input type="text" class="form-control" id="user_email" placeholder="johnjohnson@gmail.com">
+							</div>
+
+							<div class="form-group">
+								<label for="">Create Password</label>
+								<input type="text" class="form-control" id="create_password" placeholder="*************">
+							</div>
+
+							<button type="submit" class="btn btn-primary submit">Sign Up</button>
+						</form>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+	    <footer class="footer">
+	      <div class="container">
+	        <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> </p>
+	      </div>
+	    </footer>
+
+	</div>
+
+});
+
+</script>
+</body></html>

@@ -1,41 +1,65 @@
-var Sequelize = require("sequelize");
-// sequelize (lowercase) references our connection to the DB.
-var sequelize = require("../config/connection.js");
+module.exports = function(sequelize, DataTypes) {
+  var Gear = sequelize.define("Gear", {
+    title: {
+      type: DataTypes.STRING,
+      // allowNull: false,
+      validate: {
+        len: [3]
+      }
+    },
+    category: {
+      type: DataTypes.STRING,
+      // allowNull: false,
+      validate: {
+        len: [3]
+      }  
+    },
+    description: {
+      type: DataTypes.STRING,
+      // allowNull: false,
+      // validate: {
+      //   len: [10, 200]
+      // }
+    },
+    price: {
+      type: DataTypes.DECIMAL(4,2),
+      // allowNull: false,
+      validate:{
+        len: [1,6]
+      } 
+    },
+    picture: {
+      type: DataTypes.STRING,
+      // allowNull: false,
+      validate: {
+        len: [5, 250]
+      }
+    },
+    location: {
+      type: DataTypes.STRING,
+      // allowNull: false,
+      validate: {
+        len: [3, 50]
+      }
+    },
+    time: {
+      type: DataTypes.STRING,
+      // allowNull: false,
+      validate: {
+        len: [1, 15]
+      }
+    }
+  });
 
-// Creates a "User" model that matches up with DB
-var Gear = sequelize.define("gear", {
- 
-  routeName: Sequelize.STRING,
-  
-  user_id: Sequelize.INTEGER,
+  Gear.associate = function(models) {
+    // We're saying that Gear should belong to a User
+    // A Gear can't be created without an User due to the foreign key constraint
+    Gear.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: true
+      }
+    });
+  };
 
-  name: Sequelize.STRING,
-  
-  date_in: Sequelize.DATE,
-  
-  date_out: Sequelize.DATE,
-  
-  rented: Sequelize.BOOLEAN,
-
-  price: Sequelize.INTEGER,
-
-  category: Sequelize.STRING,
-
-  description: Sequelize.STRING,
-// allows rentee the opportunity to rate the quality or condition of the gear
-  gearRating: Sequelize.INTEGER,
-
-  createdAt: Sequelize.DATE,
-
-  updatedAt: Sequelize.DATE
-
-
-}, {
-  timestamps: true;
-});
-
-// Syncs with DB
-Gear.sync();
-
-// Makes the Character Model available for other files (will also create a table)
-module.exports = Gear;
+  return Gear;
+};
