@@ -57,7 +57,7 @@ module.exports = function(app) {
 
     });
   });
-
+};
 module.exports = function(app) {
   // Search for Specific user (or all users) then provides JSON
   app.get("/api/:gear?", function(req, res) {

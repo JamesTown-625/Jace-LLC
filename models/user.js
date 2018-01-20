@@ -1,37 +1,30 @@
-var Sequelize = require("sequelize");
-// sequelize (lowercase) references our connection to the DB.
-var sequelize = require("../config/connection.js");
-
-// Creates a "User" model that matches up with DB
-var User = sequelize.define("user", {
+module.exports = function(sequelize, DataTypes){
+  var User = sequelize.define("User", {
+    
+    routeName: DataTypes.STRING,
+    
+    user_id: DataTypes.INTEGER,
+    
+    first_name: DataTypes.STRING,
   
-  routeName: Sequelize.STRING,
+    last_name: DataTypes.STRING,
+    
+    email: DataTypes.STRING,
+    
+    phone: DataTypes.INTEGER,
   
-  user_id: Sequelize.INTEGER,
+    location: DataTypes.STRING,
+    // userRating allows users the opportunity to rate working with each other.
+    userRating: DataTypes.INTEGER,
   
-  first_name: Sequelize.STRING,
-
-  last_name: Sequelize.STRING,
+    createdAt: DataTypes.DATE,
+    
+    updatedAt: DataTypes.DATE
   
-  email: Sequelize.STRING,
   
-  phone: Sequelize.INTEGER,
+  }, {
+    timestamps: true
+  });
 
-  location: Sequelize.STRING,
-  // userRating allows users the opportunity to rate working with each other.
-  userRating: Sequelize.INGTEGER,
-
-  createdAt: Sequelize.DATE,
-  
-  updatedAt: Sequelize.DATE
-
-
-}, {
-  timestamps: true;
-});
-
-// Syncs with DB
-User.sync();
-
-// Makes the Character Model available for other files (will also create a table)
-module.exports = User;
+  return User;
+}

@@ -1,41 +1,41 @@
-var Sequelize = require("sequelize");
-// sequelize (lowercase) references our connection to the DB.
-var sequelize = require("../config/connection.js");
+module.exports = function(sequelize, DataTypes){
 
 // Creates a "User" model that matches up with DB
+
 var Gear = sequelize.define("gear", {
  
-  routeName: Sequelize.STRING,
+  routeName: DataTypes.INTEGER,
   
-  user_id: Sequelize.INTEGER,
+  user_id: DataTypes.INTEGER,
 
-  name: Sequelize.STRING,
+  user_name: DataTypes.STRING,
   
-  date_in: Sequelize.DATE,
+  date_in: DataTypes.DATE,
   
-  date_out: Sequelize.DATE,
+  date_out: DataTypes.DATE,
   
-  rented: Sequelize.BOOLEAN,
+  rented: DataTypes.BOOLEAN,
 
-  price: Sequelize.INTEGER,
+  price: DataTypes.INTEGER,
 
-  category: Sequelize.STRING,
+  category: DataTypes.STRING,
 
-  description: Sequelize.STRING,
+  description: DataTypes.STRING,
 // allows rentee the opportunity to rate the quality or condition of the gear
-  gearRating: Sequelize.INTEGER,
+  gearRating: DataTypes.INTEGER,
 
-  createdAt: Sequelize.DATE,
+  createdAt: DataTypes.DATE,
 
-  updatedAt: Sequelize.DATE
+  updatedAt: DataTypes.DATE
 
 
 }, {
-  timestamps: true;
+  timestamps: true
 });
-
-// Syncs with DB
-Gear.sync();
+ return Gear;
+}
+//  Syncs with DB
+//  Gear.sync();
 
 // Makes the Character Model available for other files (will also create a table)
-module.exports = Gear;
+//  module.exports = Gear;
