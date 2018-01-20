@@ -1,14 +1,100 @@
 <html lang="en"><head>
 	<meta charset="UTF-8">
-	<title>Reservation Page</title>
+	<title></title>
 
 	<!-- Latest compiled and minified CSS & JS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<link href='https://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="../../public/css/user.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 </head>
 <body>
+	<div class = "navbarContainer">	
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <img id= "logoTopBar" src = "../../assets/images/peertogear3.png"></a>
+
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	   
+	      <ul class="nav navbar-nav navbar-right">
+	        <li><a href="#"></a></li>
+	        <li><a id= "topBarLink" href="home.html">Home</a></li>
+	        <li><a id= "topBarLink" href="#">About Us</a></li>
+	        
+	          <!-- Login Button -->
+	          <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" id="memberLoginButton">Member Login</button>
+
+				<div id="id01" class="modal">
+				  
+				  <form class="modal-content animate" action="/action_page.php">
+				    <div class="imgcontainer">
+				      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+				      <img id = "loginLogo" src="../../assets/images/peertogear3.png" alt="logo" class="logo">
+				    </div>
+
+				    <div class="container">
+				      <label><b>Username</b></label>
+				      <input type="text" placeholder="Enter Username" name="uname" required>
+
+				      <label><b>Password</b></label>
+				      <input type="password" placeholder="Enter Password" name="psw" required>
+				        
+				      <button type="submit">Login</button>
+				      <label>
+				        <input type="checkbox" checked="checked"> Remember me
+				      </label>
+				    </div>
+
+				    <div class="container" style="background-color:#f1f1f1">
+				      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+				      <span class="psw">Forgot <a href="#">password?</a></span>
+				    </div>
+				  </form>
+				</div>
+	          </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+	</div>
+	<div id = "logoTop">
+  			<img id = "logo" src = "../../assets/images/peertogear3.png">
+  		<!-- <div class="panel panel-default">
+			<div class="panel-body"> -->
+			    <h3 id = "tagline"><strong>Find local gear or guides for your next adventure.</strong></h3>
+			<!-- </div> -->
+		</div>
+		<div class="panel-body-left">
+			  	<div class = "row">
+				  	<div class="col-md-4">
+				    Basic panel example
+				    <!-- <img src = "../assets/images/petzl1.jpg"> -->
+					</div>
+				</div>
+	  		</div>
+
+			  <div class="panel-body-right">
+			  	<div class = "row">
+			  	<div class="col-md-4">
+			    Basic panel example
+			    <!-- <img src = "../assets/images/pressEvent.jpg"> -->
+				</div>
+				</div>
+			  </div>
 
 	<div class="container">
 
