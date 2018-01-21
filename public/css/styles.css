@@ -26,45 +26,36 @@ body {
     color: white;
     text-align: center;
 }
+
 .panel-body-left{
 	float: left;
 	width: 150px;
 	height: auto;
 	margin-left:20px;
 	background: green;
-
-
 }
+
 .panel-body-center{
-	
 	width: auto;
 	height: 1px;
 	margin-left:20px;
 	background: green;
-	
-
 }
+
 .panel-body-right{
 	float: right;
 	width: 150px;
 	height: auto;
 	margin-left:20px;
 	background: green;
-	
-
 }
+
 .thumbnail img {
     height:250px;
     width:100%;
 }
 
-#bs-example-navbar-collapse-1{
-
-
-}
-
 body {
-	
 	font-family: Abril Fatface;
 }
 
@@ -302,4 +293,9 @@ button.edit {
 
 .top-30 {
   margin-top: 30px;
+}
+
+#img-preview {
+   height: 30px;
+   width:30px;
 }

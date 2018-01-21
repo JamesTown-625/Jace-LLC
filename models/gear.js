@@ -22,10 +22,10 @@ module.exports = function(sequelize, DataTypes) {
       // }
     },
     price: {
-      type: DataTypes.DECIMAL(4,2),
+      type: DataTypes.DECIMAL(13,2),
       // allowNull: false,
       validate:{
-        len: [1,6]
+        len: [1]
       } 
     },
     picture: {

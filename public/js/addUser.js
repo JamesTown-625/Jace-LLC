@@ -1,57 +1,14 @@
 $(document).ready(function() {
-  // Getting jQuery references to the gear title, category, price, time, location, picture, description, form, and user select
-  var titleInput = $("#title");
-  var categoryInput = $("#category");
-  var priceInput = $("#price");
-  var timeInput = $("#time");
-  var locationInput = $("#location");
-  var pictureInput = $("#picture");
-  var descriptionInput = $("#description");
-  var gearForm = $("#addGear");
-  var userSelect = $("#userId");
-// ============== CLOUDINARY CODE BELOW =============================
-  var CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/jace-llc/upload'
-  var CLOUDINARY_UPLOAD_PRESET = 'eyxxnu6l';
-  var imgPreview = document.getElementById('img-preview')
-  var fileUpload = document.getElementById('file-upload');
-  var imgURL;
+	
+	var firstName = $('#firstName'); 
+	var lastName = $('#lastName');
+	var userSelect = $('#userName');
+	var email = $('#userEmail');
+	var password = $('#userPassword');
+	var userForm = $('#createUser');
 
-    function updateURL() {
-      $("#picture").val(imgURL);
-      console.log("Done!")
-    };
-
-  fileUpload.addEventListener('change', function() {
-      //console.log(event);
-      var file = event.target.files[0];
-      var formData = new FormData();
-      formData.append('file', file);
-      formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
- 
-      axios({
-          url: CLOUDINARY_URL,
-          method: "POST",
-          headers: {
-             'Content-Type': 'application/x-www-form-urlencoded'
-          },
-          data: formData
-             
-          }).then(function(res){
-             console.log(res);
-             //console.log(res.data.secure_url)
-           imgURL = res.data.secure_url
-             console.log(imgURL)
-             updateURL();
-             
-          }).catch(function(err){
-             console.error(err);
-          });
-         
-      });
-// ====================== CLOUDINARY CODE ABOVE ========================
-
-  // Adding an event listener for when the form is submitted
-  $(gearForm).on("submit", handleFormSubmit);
+	// Adding an event listener for when the form is submitted
+  $(userForm).on("submit", handleFormSubmit);
   // Gets the part of the url that comes after the "?" (which we have if we're updating a gear)
   var url = window.location.search;
   console.log(url);
@@ -62,9 +19,9 @@ $(document).ready(function() {
 
   // If we have this section in our url, we pull out the gear id from the url
   // In '?gear_id=1', gearId is 1
-  if (url.indexOf("?gear_id=") !== -1) {
-    gearId = url.split("=")[1];
-    getGearData(gearId, "gear");
+  if (url.indexOf("?user_id=") !== -1) {
+    userId = url.split("=")[1];
+    getGearData(userId, "user");
   }
   // Otherwise if we have an user_id in our url, preset the user select box to be our user
   else if (url.indexOf("?user_id=") !== -1) {
@@ -78,34 +35,27 @@ $(document).ready(function() {
   function handleFormSubmit(event) {
     event.preventDefault();
     // Wont submit the gear if we are missing a description, title, price, category, time, location, pictures, 
-    if (!titleInput.val().trim() || !categoryInput.val().trim() || !priceInput.val().trim() || !timeInput.val().trim() || !locationInput.val().trim() || !pictureInput.val().trim() || !descriptionInput.val().trim() || !userSelect.val()) {
+    if (!firstName.val().trim() || !lastName.val().trim() || !userSelect.val().trim() || !email.val().trim() || !password.val().trim() || !userSelect.val()) {
       return;
     }
     // Constructing a newGear object to hand to the database
-    var newGear = {
-      title: titleInput
+    var newUser = {
+      firstName: firstName
         .val()
         .trim(),
-      category: categoryInput
+      lastName: lastName
         .val()
         .trim(),
-      price: priceInput
-        .val()
-        .trim(),
-      time: timeInput
-        .val()
-        .trim(),
-      location: locationInput
-        .val()
-        .trim(),
-      picture: pictureInput
-        .val()
-        .trim(),
-      description: descriptionInput
-        .val()
-        .trim(),
+      email: email
+      	.val()
+      	.trim(),
+      password: password
+      	.val()
+      	.trim(),
       userId: userSelect.val()
     };
+
+    console.log(newUser);
 
     // If we're updating gear run updateGear to update gear
     // Otherwise run submitGear to create a whole new gear posting
@@ -115,24 +65,25 @@ $(document).ready(function() {
       console.log(gearId);
 
       newGear.id = userId;
-      updateGear(newGear);
+      updateGear(newUser);
     }
     else {
-      console.log("This is the newGear and gearId: ")
-      console.log(newGear);
-      console.log(gearId);
+      console.log("This is the newUser and userId: ")
+      console.log(newUser);
+      console.log(userId);
        console.log("userID")
       console.log(userId)
-      submitGear(newGear);
+      submitUser(newUser);
 
     }
   }
 
-  // Submits a new gear post and brings user to gear page upon completion
-  function submitGear(gear) {
-    console.log(gear);
-    $.post("/api/gear", gear, function() {
-      window.location.href = "/gear";
+  // Submits a new user and brings user to home page upon completion
+  function submitUser(user) {
+  	console.log("This is what I'm looking for");
+    console.log(user);
+    $.post("/api/users", user, function() {
+      window.location.href = "/";
     });
   }
 
@@ -154,13 +105,11 @@ $(document).ready(function() {
       if (data) {
         console.log(data.userId || data.id);
         // If this gear exists, prefill our cms forms with its data
-        titleInput.val(data.title);
-        categoryInput.val(data.category);
-        priceInput.val(data.price);
-        timeInput.val(data.time);
-        locationInput.val(data.location);
-        pictureInput.val(data.picture);
-        descriptionInput.val(data.description);
+        firstName.val(data.firstName);
+        lastName.val(data.lastName);
+        userSelect.val(data.userSelect);
+        email.val(data.email);
+        password.val(data.password);
         userId = data.userId || data.id;
         // If we have gear with this id, set a flag for us to know to update the posted gear
         // when we hit submit

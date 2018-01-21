@@ -32,14 +32,16 @@ $(document).ready(function() {
       .then(getUsers);
   }
 
+
+
   // Function for creating a new list row for users
   function createUserRow(userData) {
     var newTr = $("<tr>");
     newTr.data("user", userData);
     newTr.append("<td>" + userData.userId + "</td>");
-    newTr.append("<td> " + userData.length + "</td>");
+    newTr.append("<td> " + userData.Gears.length + "</td>");
     newTr.append("<td><a href='/gear?user_id=" + userData.id + "'>Go to Gear</a></td>");
-    newTr.append("<td><a href='/cms?user_id=" + userData.id + "'>Add New Gear</a></td>");
+    newTr.append("<td><a href='/add?user_id=" + userData.id + "'>Add New Gear</a></td>");
     newTr.append("<td><a style='cursor:pointer;color:red' class='delete-user'>Delete User</a></td>");
     return newTr;
   }
@@ -61,7 +63,6 @@ $(document).ready(function() {
     userList.children().not(":last").remove();
     userContainer.children(".alert").remove();
     if (rows.length) {
-      console.log(rows);
       userList.prepend(rows);
     }
     else {

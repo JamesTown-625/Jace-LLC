@@ -1,7 +1,7 @@
 var db = require("../models");
 // const config = require('../config');
 // console.log(process.env)
-var stripe = require('stripe')(process.env.STRIPESECRETT);
+var stripe = require('stripe')('sk_test_NLLE4K0HCpmEEDuav3E4PrLa');
 
 module.exports = function(app) {
   app.post('/charge', function(req, res, next) {

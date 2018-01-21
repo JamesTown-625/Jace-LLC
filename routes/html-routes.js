@@ -12,28 +12,33 @@ module.exports = function(app) {
 
   // Each of the below routes just handles the HTML page that the user gets sent to.
 
-  // index route loads view.html
+  // root route loads home.html
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/home.html"));
+    res.sendFile(path.join(__dirname, "../public/html/home.html"));
   });
 
   //  add gear route loads addGear.html
   app.get("/add", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/addGear.html"));
+    res.sendFile(path.join(__dirname, "../public/html/addGear.html"));
   });
 
-  // blog route loads gear.html
+  // gear route loads gear.html
   app.get("/gear", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/gear.html"));
+    res.sendFile(path.join(__dirname, "../public/html/gear.html"));
   });
 
-  // authors route loads user-manager.html
+  // users route loads user-manager.html
   app.get("/users", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/user-manager.html"));
+    res.sendFile(path.join(__dirname, "../public/html/user-manager.html"));
+  });
+
+  // signin route loads user.html
+  app.get("/create", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/user.html"));
   });
   
   app.get("/payment", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/stripePayment.html"));
+    res.sendFile(path.join(__dirname, "../public/html/stripePayment.html"));
   });
 
 };

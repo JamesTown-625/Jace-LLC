@@ -1,6 +1,6 @@
 console.log("yo");
 var handler = StripeCheckout.configure({
-  key: 'pk_test_wjVLR03Xb2k798iDsT0F66a5',
+  key: 'pk_test_9xJpaUYQTlQcWriehGnKahzt',
   image: 'https://wilderness.org/sites/default/files/styles/slide/public/slide_images/northcascadesnationalpark-parish-rei.jpg?itok=_I-BLlim',
   locale: 'auto',
   token: function (token) {
@@ -26,9 +26,9 @@ var handler = StripeCheckout.configure({
 //fired off on an ng-click an initiate my stripe api payment form
 $('#makePayment').on('click', function(){
   handler.open({
-    name: 'Gear UP',
+    name: 'Peer To Gear',
     email: 'bob@bob.com',
-    description: 'GearUp.com',
+    description: 'peertogear.com',
     amount: parseInt('123') * 100
   })
 })

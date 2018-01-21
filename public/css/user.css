@@ -1,4 +1,21 @@
+.panel-body{
+    
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top:0px;
+    padding-bottom:0px;
+    font-size: 25px;
+}
 
+.panel-title{
+    
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+    font-weight: bold;
+}
 
 #bs-example-navbar-collapse-1{
 	/*background-image: url("../../assets/woodPlanks2.png");*/
