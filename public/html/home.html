@@ -56,7 +56,7 @@
 				      <label><b>Password</b></label>
 				      <input type="password" placeholder="Enter Password" name="psw" required>
 				        
-				      <button type="submit">Login</button>
+				      <button type="submit" id="login" onclick="document.getElementById('id01').style.display='none'">Login</button>
 				      <label>
 				        <input type="checkbox" checked="checked"> Remember me
 				      </label>
@@ -189,7 +189,7 @@
 		      <div class="caption">
 		        <h3>1 Day Guide-Biking in Fruita</h3>
 		        <p>$50 per person</p>
-		        <p><a href="user.html" class="btn btn-primary" role="button">More Info</a><a href="#" class="btn btn-primary disabled" role="button">Add to Cart</a></p>
+		        <p><a href="user.html" class="btn btn-primary" role="button">More Info</a><a href="./html/stripePayment.html" class="btn btn-primary disabled cart" role="button">Add to Cart</a></p>
 		      </div>
 		    </div>
 		  </div>
@@ -199,7 +199,7 @@
 		      <div class="caption">
 		        <h3>4 Day river trip</h3>
 		        <p>$800 per person</p>
-		        <p><a href="user.html" class="btn btn-primary" role="button">More Info</a><a href="#" class="btn btn-primary disabled" role="button">Add to Cart</a></p>
+		        <p><a href="user.html" class="btn btn-primary" role="button">More Info</a><a href="./html/stripePayment.html" class="btn btn-primary disabled cart" role="button">Add to Cart</a></p>
 		      </div>
 		    </div>
 		  </div>
@@ -209,7 +209,7 @@
 		      <div class="caption">
 		        <h3>1 Day Climbing Guide</h3>
 		        <p>$50 per day</p>
-		        <p><a href="user.html" class="btn btn-primary" role="button">More Info</a><a href="#" class="btn btn-primary disabled" role="button">Add to Cart</a></p>
+		        <p><a href="user.html" class="btn btn-primary" role="button">More Info</a><a href="./html/stripePayment.html" class="btn btn-primary disabled cart" role="button">Add to Cart</a></p>
 		      </div>
 		    </div>
 		  </div>
@@ -224,7 +224,7 @@
 		      <div class="caption">
 		        <h3>Full backpacking gear</h3>
 		        <p>$35 per day</p>
-		        <p><a href="user.html" class="btn btn-primary" role="button">More Info</a><a href="#" class="btn btn-primary disabled" role="button">Add to Cart</a></p>
+		        <p><a href="user.html" class="btn btn-primary" role="button">More Info</a><a href="./html/stripePayment.html" class="btn btn-primary disabled cart" role="button">Add to Cart</a></p>
 		      </div>
 		    </div>
 		  </div>
@@ -234,7 +234,7 @@
 		      <div class="caption">
 		        <h3>Canoe Rental</h3>
 		        <p>$20 per day</p>
-		        <p><a href="user.html" class="btn btn-primary" role="button">More Info</a><a href="#" class="btn btn-primary disabled" role="button">Add to Cart</a></p>
+		        <p><a href="user.html" class="btn btn-primary" role="button">More Info</a><a href="./html/stripePayment.html" class="btn btn-primary disabled cart" role="button">Add to Cart</a></p>
 		      </div>
 		    </div>
 		  </div>
@@ -244,7 +244,7 @@
 		      <div class="caption">
 		        <h3>1 Day Surfboard Rental</h3>
 		        <p>$25 per day</p>
-		        <p><a href="user.html" class="btn btn-primary" role="button">More Info</a><a href="#" class="btn btn-primary disabled" role="button">Add to Cart</a></p>
+		        <p><a href="user.html" class="btn btn-primary" role="button">More Info</a><a href="./html/stripePayment.html" class="btn btn-primary disabled cart" role="button">Add to Cart</a></p>
 		      </div>
 		    </div>
 		  </div>
@@ -253,7 +253,7 @@
 	<div class="container">
 		<div class = "addGear">
 		<h4 style="text-align: center" ><strong>Have some gear you're not using? Click below to make it available</strong></h4>
-				<p><a class="btn btn-primary disabled btn-lg" href="#" role="button" id="addGearButton">ADD GEAR</a></p>
+				<p><a class="btn btn-primary disabled cart btn-lg" href="html/addGear.html" role="button" id="addGearButton">ADD GEAR</a></p>
 			</div>
 			</div>
 			<br>
@@ -275,6 +275,13 @@
 	        modal.style.display = "none";
 	    }
 	}
+
+	$("#login").on('click', function(){
+		event.preventDefault();
+		console.log("Hey")
+		$(".cart").removeClass("btn btn-primary disabled")
+		$(".cart").addClass("btn btn-primary active")
+	});
 	</script>
 </body>
 </html>
