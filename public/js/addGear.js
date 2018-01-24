@@ -132,7 +132,7 @@ $(document).ready(function() {
   function submitGear(gear) {
     console.log(gear);
     $.post("/api/gear", gear, function() {
-      window.location.href = "/gear";
+      window.location.href = "/";
     });
   }
 

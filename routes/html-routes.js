@@ -25,7 +25,7 @@ module.exports = function(app) {
   // gear route loads gear.html
   app.get("/gear", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/gear.html"));
-  });
+  }); 
 
   // users route loads user-manager.html
   app.get("/users", function(req, res) {

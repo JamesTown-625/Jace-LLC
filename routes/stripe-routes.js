@@ -12,7 +12,7 @@ module.exports = function(app) {
     var email = req.body.email
     var cart = [{
       quantity: 1,
-      price: 123
+      price: 52.13
     }]
 
     var total = 0;

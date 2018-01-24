@@ -27,9 +27,9 @@ var handler = StripeCheckout.configure({
 $('#makePayment').on('click', function(){
   handler.open({
     name: 'Peer To Gear',
-    email: 'bob@bob.com',
+    email: 'jamesteerlink8@gmail.com',
     description: 'peertogear.com',
-    amount: parseInt('123') * 100
+    amount: parseInt('52.13') * 100
   })
 })
 
