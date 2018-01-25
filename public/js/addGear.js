@@ -9,6 +9,7 @@ $(document).ready(function() {
   var descriptionInput = $("#description");
   var gearForm = $("#addGear");
   var userSelect = $("#userId");
+  
 // ============== CLOUDINARY CODE BELOW =============================
   var CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/jace-llc/upload'
   var CLOUDINARY_UPLOAD_PRESET = 'eyxxnu6l';
@@ -54,7 +55,7 @@ $(document).ready(function() {
   $(gearForm).on("submit", handleFormSubmit);
   // Gets the part of the url that comes after the "?" (which we have if we're updating a gear)
   var url = window.location.search;
-  console.log(url);
+  // console.log(url);
   var gearId;
   var userId;
   // Sets a flag for whether or not we're updating a gear to be false initially
@@ -128,7 +129,7 @@ $(document).ready(function() {
     }
   }
 
-  // Submits a new gear post and brings user to gear page upon completion
+  // Submits a new gear post and brings user to home page upon completion
   function submitGear(gear) {
     console.log(gear);
     $.post("/api/gear", gear, function() {
@@ -153,7 +154,7 @@ $(document).ready(function() {
     $.get(queryUrl, function(data) {
       if (data) {
         console.log(data.userId || data.id);
-        // If this gear exists, prefill our cms forms with its data
+        // If this gear exists, prefill our gear forms with its data
         titleInput.val(data.title);
         categoryInput.val(data.category);
         priceInput.val(data.price);

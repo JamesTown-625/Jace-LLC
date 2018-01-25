@@ -122,7 +122,7 @@ $(document).ready(function() {
       .parent()
       .parent()
       .data("gear");
-    window.location.href = "/cms?gear_id=" + currentGear.id;
+    window.location.href = "/gear?gear_id=" + currentGear.id;
   }
 
   // This function displays a message when there is no gear
@@ -135,7 +135,7 @@ $(document).ready(function() {
     gearContainer.empty();
     var messageh2 = $("<h2>");
     messageh2.css({ "text-align": "center", "margin-top": "50px" });
-    messageh2.html("You haven't added any gear yet" + partial + ", navigate <a href='/cms" + query +
+    messageh2.html("You haven't added any gear yet" + partial + ", navigate <a href='/add" + query +
     "'>here</a> in order to get started.");
     gearContainer.append(messageh2);
   }

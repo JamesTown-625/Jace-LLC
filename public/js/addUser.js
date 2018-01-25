@@ -71,7 +71,7 @@ $(document).ready(function() {
       console.log("This is the newUser and userId: ")
       console.log(newUser);
       console.log(userId);
-       console.log("userID")
+      console.log("userID")
       console.log(userId)
       submitUser(newUser);
 
@@ -80,7 +80,7 @@ $(document).ready(function() {
 
   // Submits a new user and brings user to home page upon completion
   function submitUser(user) {
-  	console.log("This is what I'm looking for");
+  	// console.log("This is what I'm looking for");
     console.log(user);
     $.post("/api/users", user, function() {
       window.location.href = "/";
@@ -104,7 +104,7 @@ $(document).ready(function() {
     $.get(queryUrl, function(data) {
       if (data) {
         console.log(data.userId || data.id);
-        // If this gear exists, prefill our cms forms with its data
+        // If this gear exists, prefill our addGear forms with its data
         firstName.val(data.firstName);
         lastName.val(data.lastName);
         userSelect.val(data.userSelect);
