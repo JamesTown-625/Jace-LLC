@@ -9,13 +9,15 @@ function getGear() {
 
 function renderGear(data) {
 	// console.log(data);
-	var newCol = $('<div class="col-md-4 col-sm-6 thumbnail"></div>')
-	var gearPic = $('<img class="img-responsive center-block caption" src="' + data.picture + '"></img>');
+	var newCol = $('<div class="col-md-4 col-sm-6 thumbnail"></div>');
 	var gearTitle = $('<h3 id="title">' + data.title + '</h3>');
-	var gearPrice = $('<p id="price">   $ ' + data.price + '</p>');
-	var moreInfo = $('<button onclick="document.getElementById("id02").style.display="block"" id="moreInfoButton" class="btn btn-primary">More Info</button>');
+	var gearPic = $('<img class="img-responsive center-block caption" src="' + data.picture + '"></img>');
+	// var gearDes = $('<p id="description">' + data.description + '</p>');
+	var gearLoc	= $('<p id="location">' + data.location + '</p>');
+	var gearPrice = $('<h4 id="price">   $ ' + data.price + '</h4>');
+	// var moreInfo = $('<button onclick="document.getElementById("id02").style.display="block"" id="moreInfoButton" class="btn btn-primary">More Info</button>');
 	var addToCart = $('<a href="/payment" class="btn btn-primary disabled cart" role="button">Add to Cart</a>');
-	newCol.append(gearPic, gearTitle, gearPrice, moreInfo, addToCart);
+	newCol.append(gearTitle, gearPic, gearLoc, gearPrice, addToCart);
 	$('#newGear').append(newCol);
 };
 
