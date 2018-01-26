@@ -11,10 +11,10 @@ function renderGear(data) {
 	// console.log(data);
 	var newCol = $('<div class="col-md-4 col-sm-6 thumbnail"></div>')
 	var gearPic = $('<img class="img-responsive center-block caption" src="' + data.picture + '"></img>');
-	var gearTitle = $('<h1 id="title">' + data.title + '</h1>');
+	var gearTitle = $('<h3 id="title">' + data.title + '</h3>');
 	var gearPrice = $('<p id="price">   $ ' + data.price + '</p>');
 	var moreInfo = $('<button onclick="document.getElementById("id02").style.display="block"" id="moreInfoButton" class="btn btn-primary">More Info</button>');
-	var addToCart = $('<a href="/payment" class="btn btn-primary" role="button">Add to Cart</a>');
+	var addToCart = $('<a href="/payment" class="btn btn-primary disabled cart" role="button">Add to Cart</a>');
 	newCol.append(gearPic, gearTitle, gearPrice, moreInfo, addToCart);
 	$('#newGear').append(newCol);
 };

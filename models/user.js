@@ -19,21 +19,21 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       // allowNull: false,
       validate: {
-        len: [5]
+        len: [1]
       }
     },
     email: {
       type: DataTypes.STRING,
       // allowNull: false,
       validate: {
-        len: [8]
+        len: [1]
       }
     },
     password: {
       type: DataTypes.STRING,
       // allowNull: false,
       validate: {
-        len: [8]
+        len: [1]
       }
     }
   });

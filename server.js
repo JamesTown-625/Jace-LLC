@@ -5,6 +5,7 @@
 // *** Dependencies
 // =============================================================
 var express = require("express");
+var session = require('express-session');
 var bodyParser = require("body-parser");
 
 // Sets up the Express App
@@ -15,6 +16,7 @@ var PORT = process.env.PORT || 8080;
 // Requiring our models for syncing
 var db = require("./models");
 
+
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -23,6 +25,26 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Static directory
 app.use(express.static("public"));
+
+//used for user consistency
+app.use(session({
+  secret: process.env.SESSIONSECRET || "keyboard cat",
+  resave: false,
+  saveUninitialized: true
+}));
+
+//middleware for setting up a user object when anyone first come to the appplication
+function userSetup(req, res, next) {
+    console.log(req.session)
+  if (!req.session.user) {
+    req.session.user = {}
+    req.session.user.loggedIn = false;
+  }
+  next()
+}
+
+//using middlewhere acrossed the entire application before any route gets hit.
+app.use(userSetup)
 
 // Routes
 // =============================================================

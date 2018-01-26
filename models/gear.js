@@ -4,14 +4,14 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       // allowNull: false,
       validate: {
-        len: [3]
+        len: [1]
       }
     },
     category: {
       type: DataTypes.STRING,
       // allowNull: false,
       validate: {
-        len: [3]
+        len: [1]
       }  
     },
     description: {
@@ -32,21 +32,21 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       // allowNull: false,
       validate: {
-        len: [5, 250]
+        len: [1]
       }
     },
     location: {
       type: DataTypes.STRING,
       // allowNull: false,
       validate: {
-        len: [3, 50]
+        len: [1]
       }
     },
     time: {
       type: DataTypes.STRING,
       // allowNull: false,
       validate: {
-        len: [1, 15]
+        len: [1]
       }
     }
   });
